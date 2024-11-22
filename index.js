@@ -1,31 +1,42 @@
+const fs = require("fs");
 const http = require("http");
 const helper = require("./helper");
-const readAll = require("./handlers/readall");
+const { readAll } = require("./handlers/readall");
 
 const HOST = "127.0.0.1";
 const PORT = 3000;
-
+const ARTICLES_PATH = "./articles.json";
 const endpointMapper = {
-  "/readall": readAll,
+    "/readall": readAll,
 };
+let articles = null;
 
-const server = http.createServer(handler);
+fs.readFile(ARTICLES_PATH, fsHandler);
 
-server.listen(PORT, HOST, () => {
-  console.log(`Server running at http://${HOST}:${PORT}/`);
-});
+function fsHandler(err, data) {
+    articles = JSON.parse(data);
+    startServer();
+}
 
-function handler(req, res) {
-  const controller = endpointMapper[req.url];
+function startServer() {
+    const server = http.createServer(httpHandler);
+    server.listen(PORT, HOST, () => {
+        console.log(`Server running at http://${HOST}:${PORT}/`);
+    });
+}
 
-  if (controller) {
-    controller(req, res, params);
-  } else {
-    notFound(req, res);
-  }
+function httpHandler(req, res) {
+    const handler = endpointMapper[req.url];
+
+    if (handler) {
+        console.log(handler, typeof handler);
+        handler(req, res, articles);
+    } else {
+        notFound(req, res);
+    }
 }
 
 function notFound(req, res) {
-  res.statusCode = 404;
-  res.end("Not Found");
+    res.statusCode = 404;
+    res.end("Not Found");
 }

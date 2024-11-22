@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "title": "test",
+        "text": "some article",
+        "date": 22,
+        "author": "Ilya Kustov",
+        "comments": [
+            {
+                "id": 1,
+                "articleId": 1,
+                "text": "some comment",
+                "date": 22,
+                "author": "Anonim"
+            }
+        ]
+    }
+]
