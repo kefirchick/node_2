@@ -20,6 +20,5 @@ function create(req, res, data) {
     });
 }
 
-
 module.exports = { create };
 

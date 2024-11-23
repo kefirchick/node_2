@@ -6,6 +6,8 @@ const { read } = require("./handlers/read");
 const { create } = require("./handlers/create");
 const { update } = require("./handlers/update");
 const { deleteArticle } = require("./handlers/delete");
+const { createComment } = require("./handlers/comments-create");
+const { deleteComment } = require("./handlers/comments-delete");
 
 const HOST = "127.0.0.1";
 const PORT = 3000;
@@ -16,6 +18,8 @@ const endpointMapper = {
     "/api/articles/create": create,
     "/api/articles/update": update,
     "/api/articles/delete": deleteArticle,
+    "/api/comments/create": createComment,
+    "/api/comments/delete": deleteComment
 };
 let articles = null;
 

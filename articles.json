@@ -36,6 +36,19 @@
                 "text": "some comment",
                 "date": 22,
                 "author": "Anonim"
+            },
+            {
+                "id": 1732347667501,
+                "text": "new comment",
+                "date": 23,
+                "author": "me"
+            },
+            {
+                "id": 1732347789482,
+                "articleId": 1,
+                "text": "new test comment",
+                "date": 23,
+                "author": "me"
             }
         ]
     }
