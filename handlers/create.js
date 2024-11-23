@@ -1,7 +1,5 @@
 const { parseBody, writeArticles } = require("../helper");
 
-const ARTICLES_PATH = "./articles.json";
-
 function create(req, res, data) {
     parseBody(req, (err, body) => {
         const article = {
@@ -13,6 +11,7 @@ function create(req, res, data) {
             comments: []
         }
 
+        res.statusCode = 201;
         res.setHeader("Content-Type", "application/json");
         res.end(JSON.stringify(article));
 

@@ -21,7 +21,16 @@ function writeArticles(data) {
     });
 }
 
+function getArticleIndex(data, id) {
+    const index = data.findIndex((item) => {
+        return (item.id === id) ? true : false;
+    })
+
+    return index;
+}
+
 module.exports = {
     parseBody,
-    writeArticles
+    writeArticles,
+    getArticleIndex
 }

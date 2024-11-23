@@ -1,21 +1,5 @@
 [
     {
-        "id": 1,
-        "title": "test",
-        "text": "some article",
-        "date": 22,
-        "author": "Ilya Kustov",
-        "comments": [
-            {
-                "id": 1,
-                "articleId": 1,
-                "text": "some comment",
-                "date": 22,
-                "author": "Anonim"
-            }
-        ]
-    },
-    {
         "id": 1732342295813,
         "title": "test tirle",
         "text": "test text",
@@ -38,5 +22,21 @@
         "date": 23,
         "author": "me",
         "comments": []
+    },
+    {
+        "id": 1,
+        "title": "test",
+        "text": "new text",
+        "date": 22,
+        "author": "Ilya Kustov",
+        "comments": [
+            {
+                "id": 1,
+                "articleId": 1,
+                "text": "some comment",
+                "date": 22,
+                "author": "Anonim"
+            }
+        ]
     }
 ]

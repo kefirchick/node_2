@@ -4,6 +4,8 @@ const helper = require("./helper");
 const { readAll } = require("./handlers/readall");
 const { read } = require("./handlers/read");
 const { create } = require("./handlers/create");
+const { update } = require("./handlers/update");
+const { deleteArticle } = require("./handlers/delete");
 
 const HOST = "127.0.0.1";
 const PORT = 3000;
@@ -11,7 +13,9 @@ const ARTICLES_PATH = "./articles.json";
 const endpointMapper = {
     "/api/articles/readall": readAll,
     "/api/articles/read": read,
-    "/api/articles/create": create
+    "/api/articles/create": create,
+    "/api/articles/update": update,
+    "/api/articles/delete": deleteArticle,
 };
 let articles = null;
 
