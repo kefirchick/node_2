@@ -1,7 +1,7 @@
-const { parseBody, writeArticles } = require("../helper");
+const helper = require("../helper");
 
 function deleteComment(req, res, data) {
-    parseBody(req, (err, body) => {
+    helper.parseBody(req, (err, body) => {
         data.forEach((article) => {
             article.comments.forEach((comment, pos, comments) => {
                 if (comment.id === body.id) {
@@ -15,7 +15,8 @@ function deleteComment(req, res, data) {
         res.statusCode = 204;
         res.end();
 
-        writeArticles(data);  
+        helper.writeArticles(data);
+        helper.log(req.url, body);
     });
 }
 

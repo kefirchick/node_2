@@ -1,8 +1,8 @@
-const { parseBody, writeArticles, getArticleIndex } = require("../helper");
+const helper = require("../helper");
 
-function update(req, res, data) {
-    parseBody(req, (err, body) => {
-        const pos = getArticleIndex(data, body.id);
+function updateArticle(req, res, data) {
+    helper.parseBody(req, (err, body) => {
+        const pos = helper.getArticleIndex(data, body.id);
         
         if (body.title) {
             data[pos].title = body.title;
@@ -19,9 +19,10 @@ function update(req, res, data) {
         res.setHeader("Content-Type", "application/json");
         res.end(JSON.stringify(data[pos]));
 
-        writeArticles(data);  
+        helper.writeArticles(data);
+        helper.log(req.url, body);
     });
 }
 
-module.exports = { update };
+module.exports = { updateArticle };
 

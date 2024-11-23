@@ -1,8 +1,8 @@
-const { parseBody, writeArticles, getArticleIndex } = require("../helper");
+const helper = require("../helper");
 
 function createComment(req, res, data) {
-    parseBody(req, (err, body) => {
-        const pos = getArticleIndex(data, body.articleId);
+    helper.parseBody(req, (err, body) => {
+        const pos = helper.getArticleIndex(data, body.articleId);
         const comment = {
             id: Date.now(),
             articleId: body.articleId,
@@ -16,7 +16,8 @@ function createComment(req, res, data) {
         res.end(JSON.stringify(comment));
 
         data[pos].comments.push(comment);
-        writeArticles(data);  
+        helper.writeArticles(data);
+        helper.log(req.url, body); 
     });
 }
 

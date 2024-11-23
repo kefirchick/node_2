@@ -1,7 +1,7 @@
-const { parseBody, writeArticles } = require("../helper");
+const helper = require("../helper");
 
-function create(req, res, data) {
-    parseBody(req, (err, body) => {
+function createArticle(req, res, data) {
+    helper.parseBody(req, (err, body) => {
         const article = {
             id: Date.now(),
             title: body.title,
@@ -16,9 +16,10 @@ function create(req, res, data) {
         res.end(JSON.stringify(article));
 
         data.push(article);
-        writeArticles(data);  
+        helper.writeArticles(data);
+        helper.log(req.url, body);  
     });
 }
 
-module.exports = { create };
+module.exports = { createArticle };
 
