@@ -32,10 +32,11 @@ function getArticleIndex(data, id) {
 }
 
 function log(url, body) {
-    const timeLine = `Time: ${new Date()}\n`;
-    const urlLine = `URL: ${url}\n`;
+    const timeLine = `Time:\t${new Date()}\n`;
+    const urlLine = `URL:\t${url}\n`;
     const bodyString = `Body:\n${JSON.stringify(body, null, 4)}\n`;
     const message = `${timeLine}${urlLine}${bodyString}\n`;
+    
     fs.appendFile(LOG_PATH, message, (err) => {});
 }
 

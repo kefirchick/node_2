@@ -8,3 +8,13 @@ Body:
     "author": "4444444"
 }
 
+Time:	Sat Nov 23 2024 15:36:46 GMT+0500 (Узбекистан, стандартное время)
+URL:	/api/comments/create
+Body:
+{
+    "articleId": 1,
+    "comment": "updated title",
+    "text": "333333",
+    "author": "4444444"
+}
+
