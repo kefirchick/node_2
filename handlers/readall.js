@@ -3,6 +3,4 @@ function readAll(req, res, data) {
     res.end(JSON.stringify(data));
 }
 
-module.exports = {
-    readAll,
-};
+module.exports = { readAll };

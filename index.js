@@ -2,12 +2,14 @@ const fs = require("fs");
 const http = require("http");
 const helper = require("./helper");
 const { readAll } = require("./handlers/readall");
+const { read } = require("./handlers/read");
 
 const HOST = "127.0.0.1";
 const PORT = 3000;
 const ARTICLES_PATH = "./articles.json";
 const endpointMapper = {
     "/readall": readAll,
+    "/read" : read
 };
 let articles = null;
 
@@ -29,7 +31,6 @@ function httpHandler(req, res) {
     const handler = endpointMapper[req.url];
 
     if (handler) {
-        console.log(handler, typeof handler);
         handler(req, res, articles);
     } else {
         notFound(req, res);
