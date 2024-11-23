@@ -3,13 +3,15 @@ const http = require("http");
 const helper = require("./helper");
 const { readAll } = require("./handlers/readall");
 const { read } = require("./handlers/read");
+const { create } = require("./handlers/create");
 
 const HOST = "127.0.0.1";
 const PORT = 3000;
 const ARTICLES_PATH = "./articles.json";
 const endpointMapper = {
-    "/readall": readAll,
-    "/read" : read
+    "/api/articles/readall": readAll,
+    "/api/articles/read" : read,
+    "/api/articles/create": create
 };
 let articles = null;
 
