@@ -1,3 +1,7 @@
+const fs = require("fs");
+
+const ARTICLES_PATH = "./articles.json";
+
 function parseBody(req, cb) {
     let body = [];
 
@@ -10,4 +14,14 @@ function parseBody(req, cb) {
     });
 }
 
-module.exports = { parseBody }
+function writeArticles(data) {
+    const dataString = JSON.stringify(data, null, 4);
+    fs.writeFile(ARTICLES_PATH, dataString, (err) => {
+        
+    });
+}
+
+module.exports = {
+    parseBody,
+    writeArticles
+}

@@ -10,7 +10,7 @@ const PORT = 3000;
 const ARTICLES_PATH = "./articles.json";
 const endpointMapper = {
     "/api/articles/readall": readAll,
-    "/api/articles/read" : read,
+    "/api/articles/read": read,
     "/api/articles/create": create
 };
 let articles = null;
