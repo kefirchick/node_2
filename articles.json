@@ -1,10 +1,10 @@
 [
     {
         "id": 1,
-        "title": "updated title",
+        "title": "new title",
         "text": "updated text",
         "date": 22,
-        "author": "Ilya Kustov",
+        "author": "updated author",
         "comments": [
             {
                 "id": 1732347789482,
@@ -17,14 +17,6 @@
     },
     {
         "id": 1732526714828,
-        "title": "test title",
-        "text": "test text",
-        "date": 25,
-        "author": "test author",
-        "comments": []
-    },
-    {
-        "id": 1732528389681,
         "title": "test title",
         "text": "test text",
         "date": 25,

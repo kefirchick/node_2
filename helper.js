@@ -8,17 +8,19 @@ function parseBody(req, cb) {
 
     req.on("data", (chunk) => {
         body.push(chunk);
-    }).on("end", () => {
-        try {
-            body = Buffer.concat(body).toString();
-            body = JSON.parse(body);
-            cb(null, body);
-        } catch (err) {
-            cb(err);
-        }
-    }).on('error', (err) => {
-        cb(err);
     })
+        .on("end", () => {
+            try {
+                body = Buffer.concat(body).toString();
+                body = JSON.parse(body);
+                cb(null, body);
+            } catch (err) {
+                cb(err);
+            }
+        })
+        .on("error", (err) => {
+            cb(err);
+        });
 }
 
 function readArticlesFile(cb) {
@@ -37,9 +39,12 @@ function readArticlesFile(cb) {
 
 function writeArticlesFile(data) {
     const dataString = JSON.stringify(data, null, 4);
+
     fs.writeFile(ARTICLES_PATH, dataString, (err) => {
         if (err) {
-            console.log(`Error writing articles.json with the message:\n${err.message}`);
+            console.log(
+                `Error writing articles.json with the message:\n${err.message}`
+            );
         }
     });
 }
@@ -52,6 +57,24 @@ function getArticleIndex(data, id) {
     return index;
 }
 
+function deleteCommentById(data, id) {
+    const isComment = data.some((article) => {
+        const pos = article.comments.findIndex((comment) => {
+            return comment.id === id ? true : false;
+        });
+
+        if (pos === -1) {
+            return false;
+        } else {
+            article.comments.splice(pos, 1);
+
+            return true;
+        }
+    });
+
+    return isComment;
+}
+
 function log(url, body) {
     const timeLine = `Time:\t${new Date()}\n`;
     const urlLine = `URL:\t${url}\n`;
@@ -60,7 +83,9 @@ function log(url, body) {
 
     fs.appendFile(LOG_PATH, message, (err) => {
         if (err) {
-            console.log(`Error writing log.txt with the message:\n${err.message}`);
+            console.log(
+                `Error writing log.txt with the message:\n${err.message}`
+            );
         }
     });
 }
@@ -88,7 +113,8 @@ module.exports = {
     writeArticlesFile,
     readArticlesFile,
     getArticleIndex,
+    deleteCommentById,
     log,
     isValid,
-    isIdValid
+    isIdValid,
 };

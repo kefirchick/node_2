@@ -274,3 +274,57 @@ Body:
     "author": "test author"
 }
 
+Time:	Mon Nov 25 2024 15:12:16 GMT+0500 (Узбекистан, стандартное время)
+URL:	/api/articles/delete
+Body:
+{
+    "id": 1732528389681
+}
+
+Time:	Mon Nov 25 2024 15:15:31 GMT+0500 (Узбекистан, стандартное время)
+URL:	/api/articles/read
+Body:
+{
+    "id": 1
+}
+
+Time:	Mon Nov 25 2024 15:29:41 GMT+0500 (Узбекистан, стандартное время)
+URL:	/api/articles/update
+Body:
+{
+    "id": 1,
+    "title": "new title",
+    "text": "updated text",
+    "author": "updated author"
+}
+
+Time:	Mon Nov 25 2024 16:00:06 GMT+0500 (Узбекистан, стандартное время)
+URL:	/api/comments/create
+Body:
+{
+    "articleId": 1,
+    "text": "comment text",
+    "author": "comment author"
+}
+
+Time:	Mon Nov 25 2024 16:12:36 GMT+0500 (Узбекистан, стандартное время)
+URL:	/api/comments/delete
+Body:
+{
+    "id": 1
+}
+
+Time:	Mon Nov 25 2024 16:13:16 GMT+0500 (Узбекистан, стандартное время)
+URL:	/api/comments/delete
+Body:
+{
+    "id": 2
+}
+
+Time:	Mon Nov 25 2024 16:15:13 GMT+0500 (Узбекистан, стандартное время)
+URL:	/api/comments/delete
+Body:
+{
+    "id": 1732532406699
+}
+

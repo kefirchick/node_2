@@ -8,7 +8,7 @@ const { deleteComment } = require("./handlers/comments-delete");
 
 function error(req, res, err) {
     res.statusCode = err.code;
-    res.setHeader('Content-Type', 'application/json');
+    res.setHeader("Content-Type", "application/json");
     res.end(JSON.stringify(err));
 }
 
@@ -20,5 +20,5 @@ module.exports = {
     deleteArticle,
     createComment,
     deleteComment,
-    error
+    error,
 };
