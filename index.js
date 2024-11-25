@@ -19,9 +19,13 @@ function startServer(data) {
         const handler = ENDPOINT_MAPPER[req.url];
     
         if (handler) {
-            handler(req, res, data);
+            handler(req, res, data, (err) => {
+                if (err) {
+                    handlers.error(req, res, err);
+                }
+            });
         } else {
-            handlers.notFound(req, res);
+            handlers.error(req, res, {code: 404, message: "Not Found"});
         }
     });
     
@@ -32,7 +36,7 @@ function startServer(data) {
 
 helper.readArticlesFile((err, data) => {
     if (err) {
-        throw new Error(`Can't read articles.json with the error: ${err.message}`);
+        throw new Error(`Error reading articles.json with the message:\n${err.message}`);
     }
 
     startServer(data);

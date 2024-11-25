@@ -1,5 +1,4 @@
 const fs = require("fs");
-const { callbackify } = require("util");
 
 const ARTICLES_PATH = "./articles.json";
 const LOG_PATH = "./log.txt";
@@ -10,10 +9,16 @@ function parseBody(req, cb) {
     req.on("data", (chunk) => {
         body.push(chunk);
     }).on("end", () => {
-        body = Buffer.concat(body).toString();
-        body = JSON.parse(body);
-        cb(null, body);
-    });
+        try {
+            body = Buffer.concat(body).toString();
+            body = JSON.parse(body);
+            cb(null, body);
+        } catch (err) {
+            cb(err);
+        }
+    }).on('error', (err) => {
+        cb(err);
+    })
 }
 
 function readArticlesFile(cb) {
@@ -34,6 +39,7 @@ function writeArticlesFile(data) {
     const dataString = JSON.stringify(data, null, 4);
     fs.writeFile(ARTICLES_PATH, dataString, (err) => {
         if (err) {
+            console.log(`Error writing articles.json with the message:\n${err.message}`);
         }
     });
 }
@@ -52,7 +58,29 @@ function log(url, body) {
     const bodyString = `Body:\n${JSON.stringify(body, null, 4)}\n`;
     const message = `${timeLine}${urlLine}${bodyString}\n`;
 
-    fs.appendFile(LOG_PATH, message, (err) => {});
+    fs.appendFile(LOG_PATH, message, (err) => {
+        if (err) {
+            console.log(`Error writing log.txt with the message:\n${err.message}`);
+        }
+    });
+}
+
+function isValid(...args) {
+    for (const str of args) {
+        if (!str || typeof str !== "string") {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function isIdValid(id) {
+    if (Number.isInteger(id) || typeof str === "string") {
+        return true;
+    }
+
+    return false;
 }
 
 module.exports = {
@@ -61,4 +89,6 @@ module.exports = {
     readArticlesFile,
     getArticleIndex,
     log,
+    isValid,
+    isIdValid
 };

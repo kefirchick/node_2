@@ -16,15 +16,7 @@
         ]
     },
     {
-        "id": 1732459073602,
-        "title": "test title",
-        "text": "test text",
-        "date": 24,
-        "author": "test author",
-        "comments": []
-    },
-    {
-        "id": 1732516353745,
+        "id": 1732526714828,
         "title": "test title",
         "text": "test text",
         "date": 25,
@@ -32,7 +24,7 @@
         "comments": []
     },
     {
-        "id": 1732521197642,
+        "id": 1732528389681,
         "title": "test title",
         "text": "test text",
         "date": 25,
