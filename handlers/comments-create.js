@@ -16,7 +16,7 @@ function createComment(req, res, data) {
         res.end(JSON.stringify(comment));
 
         data[pos].comments.push(comment);
-        helper.writeArticles(data);
+        helper.writeArticlesFile(data);
         helper.log(req.url, body); 
     });
 }

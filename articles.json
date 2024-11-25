@@ -1,24 +1,8 @@
 [
     {
-        "id": 1732342440145,
-        "title": "test tirle",
-        "text": "test text",
-        "date": 23,
-        "author": "me",
-        "comments": []
-    },
-    {
-        "id": 1732342954474,
-        "title": "test title",
-        "text": "test text",
-        "date": 23,
-        "author": "me",
-        "comments": []
-    },
-    {
         "id": 1,
         "title": "updated title",
-        "text": "new text",
+        "text": "updated text",
         "date": 22,
         "author": "Ilya Kustov",
         "comments": [
@@ -28,113 +12,30 @@
                 "text": "new test comment",
                 "date": 23,
                 "author": "me"
-            },
-            {
-                "id": 1732356554285,
-                "articleId": 1,
-                "text": "1111111111",
-                "date": 23,
-                "author": "222222"
-            },
-            {
-                "id": 1732357149553,
-                "articleId": 1,
-                "text": "333333",
-                "date": 23,
-                "author": "4444444"
-            },
-            {
-                "id": 1732357232429,
-                "articleId": 1,
-                "text": "333333",
-                "date": 23,
-                "author": "4444444"
-            },
-            {
-                "id": 1732357264051,
-                "articleId": 1,
-                "text": "333333",
-                "date": 23,
-                "author": "4444444"
-            },
-            {
-                "id": 1732357315882,
-                "articleId": 1,
-                "text": "333333",
-                "date": 23,
-                "author": "4444444"
-            },
-            {
-                "id": 1732357524543,
-                "articleId": 1,
-                "text": "333333",
-                "date": 23,
-                "author": "4444444"
-            },
-            {
-                "id": 1732357543253,
-                "articleId": 1,
-                "text": "333333",
-                "date": 23,
-                "author": "4444444"
-            },
-            {
-                "id": 1732357915080,
-                "articleId": 1,
-                "text": "333333",
-                "date": 23,
-                "author": "4444444"
-            },
-            {
-                "id": 1732357967889,
-                "articleId": 1,
-                "text": "333333",
-                "date": 23,
-                "author": "4444444"
-            },
-            {
-                "id": 1732357980570,
-                "articleId": 1,
-                "text": "333333",
-                "date": 23,
-                "author": "4444444"
-            },
-            {
-                "id": 1732357989439,
-                "articleId": 1,
-                "text": "333333",
-                "date": 23,
-                "author": "4444444"
-            },
-            {
-                "id": 1732358030591,
-                "articleId": 1,
-                "text": "333333",
-                "date": 23,
-                "author": "4444444"
-            },
-            {
-                "id": 1732358206437,
-                "articleId": 1,
-                "text": "333333",
-                "date": 23,
-                "author": "4444444"
             }
         ]
     },
     {
-        "id": 1732353874476,
+        "id": 1732459073602,
         "title": "test title",
         "text": "test text",
-        "date": 23,
+        "date": 24,
         "author": "test author",
         "comments": []
     },
     {
-        "id": 1732355303088,
-        "title": "22222222",
+        "id": 1732516353745,
+        "title": "test title",
         "text": "test text",
-        "date": 23,
+        "date": 25,
+        "author": "test author",
+        "comments": []
+    },
+    {
+        "id": 1732521197642,
+        "title": "test title",
+        "text": "test text",
+        "date": 25,
         "author": "test author",
         "comments": []
     }

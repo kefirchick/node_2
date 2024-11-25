@@ -16,7 +16,7 @@ function createArticle(req, res, data) {
         res.end(JSON.stringify(article));
 
         data.push(article);
-        helper.writeArticles(data);
+        helper.writeArticlesFile(data);
         helper.log(req.url, body);  
     });
 }

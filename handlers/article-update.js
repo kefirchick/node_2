@@ -19,7 +19,7 @@ function updateArticle(req, res, data) {
         res.setHeader("Content-Type", "application/json");
         res.end(JSON.stringify(data[pos]));
 
-        helper.writeArticles(data);
+        helper.writeArticlesFile(data);
         helper.log(req.url, body);
     });
 }

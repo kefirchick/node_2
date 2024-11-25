@@ -8,7 +8,7 @@ function deleteArticle(req, res, data) {
         res.statusCode = 204;
         res.end();
 
-        helper.writeArticles(data);
+        helper.writeArticlesFile(data);
         helper.log(req.url, body); 
     });
 }
